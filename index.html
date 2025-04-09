@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Descargando...</title>
+  <title>Procesando reglamento...</title>
 </head>
 <body>
   <script>
     window.onload = function () {
+      // Descargar el archivo automáticamente
       const a = document.createElement('a');
       a.href = 'Recursos/reglamentobacal.pdf';
       a.download = 'reglamentobacal.pdf';
@@ -14,14 +15,21 @@
       a.click();
       document.body.removeChild(a);
 
-      // Intentar cerrar la ventana/pestaña
+      // Abrir el archivo en una nueva pestaña
       setTimeout(() => {
-        window.open('', '_self'); // Necesario en algunos navegadores
-        window.close();
-      }, 500); // Espera mínima para permitir la descarga antes de cerrar
+        window.open('Recursos/reglamentobacal.pdf', '_blank');
+      }, 300); // Un breve retardo para evitar bloqueo por popup
+
+      // (opcional) Intentar cerrar la pestaña actual después
+      // NOTA: solo funciona si fue abierta por un script (por ejemplo, window.open)
+      // setTimeout(() => {
+      //   window.open('', '_self');
+      //   window.close();
+      // }, 1000);
     };
   </script>
 </body>
 </html>
+
 
 
