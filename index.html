@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Descargando...</title>
+</head>
+<body>
+  <script>
+    window.onload = function () {
+      const a = document.createElement('a');
+      a.href = 'Recursos/reglamentobacal.pdf';
+      a.download = 'reglamentobacal.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      // Intentar cerrar la ventana/pestaña
+      setTimeout(() => {
+        window.open('', '_self'); // Necesario en algunos navegadores
+        window.close();
+      }, 500); // Espera mínima para permitir la descarga antes de cerrar
+    };
+  </script>
+</body>
+</html>
+
+
